@@ -12,14 +12,21 @@ namespace eCommerce.Api.Products.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+
+        #region Champs
         private readonly IProductsProvider productsProvider;
 
+        #endregion
+
+        #region Ctor
         public ProductsController(IProductsProvider productsProvider)
         {
             this.productsProvider = productsProvider;
         }
 
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Return All the products
         /// </summary>
@@ -39,9 +46,12 @@ namespace eCommerce.Api.Products.Controllers
         //TODO: Method that return a single product
 
         //TODO: Method that add a new product
-        
+
         //TODO: MEthod that update a product that exist already
 
         //TODO: Method that Delete a product
+
+        #endregion
+
     }
 }
