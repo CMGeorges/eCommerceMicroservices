@@ -1,9 +1,5 @@
 ﻿using eCommerce.Api.Products.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace eCommerce.Api.Products.Controllers
@@ -27,6 +23,7 @@ namespace eCommerce.Api.Products.Controllers
         #endregion
 
         #region Methods
+
         /// <summary>
         /// Return All the products
         /// </summary>
@@ -43,7 +40,24 @@ namespace eCommerce.Api.Products.Controllers
             return NotFound();
         }
 
-        //TODO: Method that return a single product
+        /// <summary>
+        /// Method that return a single product
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public  async Task<IActionResult> GetProductAsync(int id)
+        {
+            var result = await productsProvider.GetProductAsync(id);
+
+            if (result.IsSuccess)
+            {
+                return Ok(result.Product);
+            }
+
+            return NotFound();
+        }
+
 
         //TODO: Method that add a new product
 
