@@ -23,7 +23,7 @@ namespace eCommerce.Api.Customers.Providers
             this.logger = logger;
             this.mapper = mapper;
 
-            SeedData();
+            SeedData();   
         }
 
         private void SeedData()
