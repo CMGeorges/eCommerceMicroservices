@@ -1,3 +1,5 @@
+using eCommerce.Api.Search.Interfaces;
+using eCommerce.Api.Search.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +27,22 @@ namespace eCommerce.Api.Search
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<ISearchService, SearchService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+
+            services.AddHttpClient("OrderService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Orders"]);
+            });
+            services.AddHttpClient("CustomerService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Customers"]);
+            });
+            services.AddHttpClient("ProductService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Products"]);
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
