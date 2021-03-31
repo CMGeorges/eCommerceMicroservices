@@ -34,7 +34,7 @@ namespace eCommerce.Api.Products.Controllers
             var result = await productsProvider.GetProductsAsync();
             if (result.IsSuccess)
             {
-                return Ok(result.products);
+                return Ok(result.Products);
             }
 
             return NotFound();

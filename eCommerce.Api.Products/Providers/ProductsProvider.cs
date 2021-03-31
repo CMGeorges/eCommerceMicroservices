@@ -44,7 +44,7 @@ namespace eCommerce.Api.Products.Providers
         /// a error is catched return the error.
         /// </summary>
         /// <returns>Async</returns>
-        public async Task<(bool IsSuccess, IEnumerable<Models.Product> products, string ErrorMessage)> GetProductsAsync()
+        public async Task<(bool IsSuccess, IEnumerable<Models.Product> Products, string ErrorMessage)> GetProductsAsync()
         {
             try
             {
