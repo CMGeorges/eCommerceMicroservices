@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Api.Search.Interfaces
 {
-    public interface IOrdersService
+    public interface IProductServices
     {
-        Task<(bool IsSuccess, IEnumerable<Order> Orders, string ErrorMessage )> GetOrdersAsync(int customerId);
+        Task<(bool IsSucess, IEnumerable<Product> Products, string ErrorMessage)> GetProductsAsync();
     }
 }

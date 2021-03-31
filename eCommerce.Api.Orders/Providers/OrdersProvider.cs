@@ -22,6 +22,7 @@ namespace eCommerce.Api.Orders.Providers
             this.dbContext = dbContext;
             this.logger = logger;
             this.mapper = mapper;
+            SeedData();
         }
 
 
@@ -36,11 +37,11 @@ namespace eCommerce.Api.Orders.Providers
                     OrderDate = DateTime.Now,
                     Items = new List<OrderItem>()
                     {
-                        new OrderItem() { Id = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
-                        new OrderItem() { Id = 1, ProductId = 2, Quantity = 10, UnitPrice = 10 },
-                        new OrderItem() { Id = 1, ProductId = 3, Quantity = 10, UnitPrice = 10 },
-                        new OrderItem() { Id = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
-                        new OrderItem() { Id = 3, ProductId = 3, Quantity = 1, UnitPrice = 100 }
+                        new OrderItem() { OrderId = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 4, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 4, ProductId = 3, Quantity = 1, UnitPrice = 100 }
                     },
                     Total = 100
                 });
@@ -53,7 +54,7 @@ namespace eCommerce.Api.Orders.Providers
                     {
                         new OrderItem() { OrderId = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
                         new OrderItem() { OrderId = 1, ProductId = 2, Quantity = 10, UnitPrice = 10 },
-                        new OrderItem() { OrderId = 1, ProductId = 3, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 10, UnitPrice = 10 },
                         new OrderItem() { OrderId = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
                         new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 1, UnitPrice = 100 }
                     },
@@ -81,7 +82,7 @@ namespace eCommerce.Api.Orders.Providers
             try
             {
                 logger?.LogInformation("Quering orders of the userId");
-                var orders = await dbContext.Orders.ToListAsync();
+                var orders = await dbContext.Orders.Where(o=>o.CustomerId == customerId).ToListAsync();
 
                 if (orders != null && orders.Any())
                 {
