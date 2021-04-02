@@ -20,10 +20,6 @@ services:
     ports:
       - "6001:80"
 
-
-  ecommerce.api.products.tests:
-
-
   ecommerce.api.search:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

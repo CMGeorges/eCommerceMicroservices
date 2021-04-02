@@ -20,14 +20,6 @@ services:
       context: .
       dockerfile: eCommerce.Api.Products/Dockerfile
 
-
-  ecommerce.api.products.tests:
-    image: ${DOCKER_REGISTRY-}ecommerceapiproductstests
-    build:
-      context: .
-      dockerfile: eCommerce.Api.Products.Tests/Dockerfile
-
-
   ecommerce.api.search:
     image: ${DOCKER_REGISTRY-}ecommerceapisearch
     build:
