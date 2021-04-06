@@ -26,3 +26,4 @@ services:
       context: .
       dockerfile: eCommerce.Api.Search/Dockerfile
 
+
