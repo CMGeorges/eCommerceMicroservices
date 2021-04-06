@@ -21,7 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microservices\eCommerce.Api.Orders\eCommerce.Api.Orders.csproj" />
+    <ProjectReference Include="..\eCommerce.Api.Orders\eCommerce.Api.Orders.csproj" />
+  
   </ItemGroup>
 
 </Project>

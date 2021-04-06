@@ -16,8 +16,14 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0C5D1749-DB7F-4E57-A971-8AC126010607}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.Api.Customers.Tests", "eCommerce.Api.Customers.Tests\eCommerce.Api.Customers.Tests.csproj", "{AFD2535D-E04D-43CD-85D4-E983C7B36F67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EF3D78AB-8F12-4D64-A5B0-BF58809F7843} = {EF3D78AB-8F12-4D64-A5B0-BF58809F7843}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.Api.Orders.Tests", "eCommerce.Api.Orders.Tests\eCommerce.Api.Orders.Tests.csproj", "{DA2220F8-6DB9-4EAB-85FE-8CE0892C9A26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A776E119-66AA-492C-9C1C-73E295586B8B} = {A776E119-66AA-492C-9C1C-73E295586B8B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
