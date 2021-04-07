@@ -1,2 +1,2 @@
 # eCommerceMicroservices
-Microservice eCommerce exemple app
+Microservice eCommerce exemple app Azure Dev CI.
